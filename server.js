@@ -22,8 +22,8 @@ try{
     const transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-            user: 'mugarura13@gmail.com',
-            pass: 'yozr wjze usfg jzxt'
+            user: 'mugaruraedwinmusumba@gmail.com',
+            pass: 'yidp ckxj alxr ljnz'
         }
     });
 
@@ -40,7 +40,7 @@ try{
 
     function sendConfirmationEmail(email, password) {
         const mailOptions = {
-            from: 'mugarura13@gmail.com',
+            from: 'mugaruraedwinmusumba@gmail.com',
             to: email,
             subject: 'Registration Successful',
             text: `Congratulations! You have successfully been registered. Your current password is: ${password}, use this to reset your password to preferred password using http://localhost:3000/reset-password. You can then access the system with your newly registered credentials using http://localhost:3000/.`
@@ -84,89 +84,6 @@ try{
             })
             .catch(err => console.log(err));
     });
-
-    // app.post("/forgot-password", (req, res) => {
-    //     const { email } = req.body;
-
-    //     // Check if the email exists in the database
-    //     EmployeeModel.findOne({ email: email })
-    //         .then(user => {
-    //             if (user) {
-    //                 // If the email exists, send a success response
-    //                 res.json({ success: true, message: "Password reset email sent successfully." });
-    //             } else {
-    //                 // If the email does not exist, send a failure response
-    //                 res.json({ success: false, message: "No user found with the provided email." });
-    //             }
-    //         })
-    //         .catch(err => {
-    //             console.error("Error:", err);
-    //             res.status(500).json("An error occurred while processing your request.");
-    //         });
-    // });
-
-    // app.post("/reset-password", (req, res) => {
-    //     const { email, currentPassword, newPassword } = req.body;
-    
-    //     // Check if the email exists and the current password matches
-    //     EmployeeModel.findOne({ email: email, password: currentPassword })
-    //         .then(user => {
-    //             if (user) {
-    //                 // Update the user's password in the database
-    //                 user.password = newPassword;
-    //                 user.save()
-    //                     .then(() => {
-    //                         res.json({ success: true, message: "Password reset successful." });
-    //                     })
-    //                     .catch(err => {
-    //                         console.error("Error:", err);
-    //                         res.status(500).json({ success: false, message: "An error occurred while updating the password." });
-    //                     });
-    //             } else {
-    //                 // If user not found or current password doesn't match, return error
-    //                 res.status(401).json({ success: false, message: "Incorrect current password." });
-    //             }
-    //         })
-    //         .catch(err => {
-    //             console.error("Error:", err);
-    //             res.status(500).json({ success: false, message: "An error occurred while processing your request." });
-    //         });
-    // });
-
-    // app.post("/reset-password", (req, res) => {
-    //     const { email, currentPassword, newPassword } = req.body;
-    
-    //     // Check if the email exists
-    //     EmployeeModel.findOne({ email: email })
-    //         .then(user => {
-    //             if (user) {
-    //                 // Check if the current password matches
-    //                 if (user.password === currentPassword) {
-    //                     // Update the user's password in the database
-    //                     user.password = newPassword;
-    //                     user.save()
-    //                         .then(() => {
-    //                             res.json({ success: true, message: "Password reset successful." });
-    //                         })
-    //                         .catch(err => {
-    //                             console.error("Error:", err);
-    //                             res.status(500).json({ success: false, message: "An error occurred while updating the password." });
-    //                         });
-    //                 } else {
-    //                     // If current password doesn't match, return error
-    //                     res.status(401).json({ success: false, message: "Incorrect current password." });
-    //                 }
-    //             } else {
-    //                 // If the email does not exist, return error
-    //                 res.status(404).json({ success: false, message: "Email does not match any existing credentials." });
-    //             }
-    //         })
-    //         .catch(err => {
-    //             console.error("Error:", err);
-    //             res.status(500).json({ success: false, message: "An error occurred while processing your request." });
-    //         });
-    // });
-
 
     app.post("/reset-password", (req, res) => {
         const { email, currentPassword, newPassword } = req.body;
